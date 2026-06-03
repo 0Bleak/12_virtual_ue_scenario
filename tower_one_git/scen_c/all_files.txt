@@ -1,0 +1,748 @@
+===== all_files.txt =====
+
+===== du_zmq1.yml =====
+gnb_id: 531
+gnb_id_bit_length: 32
+gnb_du_id: 1
+f1ap:
+  cu_cp_addr: 127.0.10.1
+  bind_addr: 127.0.10.2
+f1u:
+  socket:
+    - bind_addr: 127.0.10.2
+ru_sdr:
+  device_driver: zmq
+  device_args: tx_port=tcp://127.0.0.1:3000,rx_port=tcp://127.0.0.1:3009,base_srate=11.52e6
+  srate: 11.52
+  tx_gain: 75
+  rx_gain: 75
+cell_cfg:
+  dl_arfcn: 368500
+  band: 3
+  channel_bandwidth_MHz: 10
+  common_scs: 15
+  plmn: "00101"
+  tac: 7
+  pci: 2
+  sector_id: 1
+  pdcch:
+    common: { ss0_index: 0, coreset0_index: 6 }
+    dedicated: { ss2_type: common, dci_format_0_1_and_1_1: false }
+  prach:
+    prach_config_index: 1
+  pdsch: { mcs_table: qam64 }
+  pusch: { mcs_table: qam64 }
+  slicing:
+    - { sst: 1, sd: 1, sched_cfg: { min_prb_policy_ratio: 0, max_prb_policy_ratio: 100 } }
+    - { sst: 1, sd: 2, sched_cfg: { min_prb_policy_ratio: 0, max_prb_policy_ratio: 100 } }
+    - { sst: 1, sd: 3, sched_cfg: { min_prb_policy_ratio: 0, max_prb_policy_ratio: 100 } }
+e2:
+  enable_du_e2: true
+  e2sm_kpm_enabled: true
+  e2sm_rc_enabled: true
+  addr: 10.0.2.10
+  bind_addr: 10.0.2.2
+  port: 36421
+metrics:
+  enable_json: true
+  layers: { enable_sched: true, enable_rlc: true }
+  periodicity: { du_report_period: 1000 }
+remote_control:
+  bind_addr: 0.0.0.0
+  port: 8003
+  enabled: true
+log:
+  filename: /tmp/du_zmq1.log
+  all_level: debug
+  e2ap_level: debug
+
+===== du_zmq2.yml =====
+gnb_id: 531
+gnb_id_bit_length: 32
+gnb_du_id: 2
+f1ap:
+  cu_cp_addr: 127.0.10.1
+  bind_addr: 127.0.10.3
+f1u:
+  socket:
+    - bind_addr: 127.0.10.3
+ru_sdr:
+  device_driver: zmq
+  device_args: tx_port=tcp://127.0.0.1:3300,rx_port=tcp://127.0.0.1:3309,base_srate=11.52e6
+  srate: 11.52
+  tx_gain: 75
+  rx_gain: 75
+cell_cfg:
+  dl_arfcn: 368500
+  band: 3
+  channel_bandwidth_MHz: 10
+  common_scs: 15
+  plmn: "00101"
+  tac: 7
+  pci: 3
+  sector_id: 2
+  pdcch:
+    common: { ss0_index: 0, coreset0_index: 6 }
+    dedicated: { ss2_type: common, dci_format_0_1_and_1_1: false }
+  prach:
+    prach_config_index: 1
+  pdsch: { mcs_table: qam64 }
+  pusch: { mcs_table: qam64 }
+  slicing:
+    - { sst: 1, sd: 1, sched_cfg: { min_prb_policy_ratio: 0, max_prb_policy_ratio: 100 } }
+    - { sst: 1, sd: 2, sched_cfg: { min_prb_policy_ratio: 0, max_prb_policy_ratio: 100 } }
+    - { sst: 1, sd: 3, sched_cfg: { min_prb_policy_ratio: 0, max_prb_policy_ratio: 100 } }
+e2:
+  enable_du_e2: true
+  e2sm_kpm_enabled: true
+  e2sm_rc_enabled: true
+  addr: 10.0.2.10
+  bind_addr: 10.0.2.3
+  port: 36421
+metrics:
+  enable_json: true
+  layers: { enable_sched: true, enable_rlc: true }
+  periodicity: { du_report_period: 1000 }
+remote_control:
+  bind_addr: 0.0.0.0
+  port: 8004
+  enabled: true
+log:
+  filename: /tmp/du_zmq2.log
+  all_level: debug
+  e2ap_level: debug
+
+===== du_zmq3.yml =====
+gnb_id: 531
+gnb_id_bit_length: 32
+gnb_du_id: 3
+f1ap:
+  cu_cp_addr: 127.0.10.1
+  bind_addr: 127.0.10.4
+f1u:
+  socket:
+    - bind_addr: 127.0.10.4
+ru_sdr:
+  device_driver: zmq
+  device_args: tx_port=tcp://127.0.0.1:3600,rx_port=tcp://127.0.0.1:3609,base_srate=11.52e6
+  srate: 11.52
+  tx_gain: 75
+  rx_gain: 75
+cell_cfg:
+  dl_arfcn: 368500
+  band: 3
+  channel_bandwidth_MHz: 10
+  common_scs: 15
+  plmn: "00101"
+  tac: 7
+  pci: 4
+  sector_id: 3
+  pdcch:
+    common: { ss0_index: 0, coreset0_index: 6 }
+    dedicated: { ss2_type: common, dci_format_0_1_and_1_1: false }
+  prach:
+    prach_config_index: 1
+  pdsch: { mcs_table: qam64 }
+  pusch: { mcs_table: qam64 }
+  slicing:
+    - { sst: 1, sd: 1, sched_cfg: { min_prb_policy_ratio: 0, max_prb_policy_ratio: 100 } }
+    - { sst: 1, sd: 2, sched_cfg: { min_prb_policy_ratio: 0, max_prb_policy_ratio: 100 } }
+    - { sst: 1, sd: 3, sched_cfg: { min_prb_policy_ratio: 0, max_prb_policy_ratio: 100 } }
+e2:
+  enable_du_e2: true
+  e2sm_kpm_enabled: true
+  e2sm_rc_enabled: true
+  addr: 10.0.2.10
+  bind_addr: 10.0.2.4
+  port: 36421
+metrics:
+  enable_json: true
+  layers: { enable_sched: true, enable_rlc: true }
+  periodicity: { du_report_period: 1000 }
+remote_control:
+  bind_addr: 0.0.0.0
+  port: 8005
+  enabled: true
+log:
+  filename: /tmp/du_zmq3.log
+  all_level: debug
+  e2ap_level: debug
+
+===== du_zmq4.yml =====
+gnb_id: 531
+gnb_id_bit_length: 32
+gnb_du_id: 4
+f1ap:
+  cu_cp_addr: 127.0.10.1
+  bind_addr: 127.0.10.5
+f1u:
+  socket:
+    - bind_addr: 127.0.10.5
+ru_sdr:
+  device_driver: zmq
+  device_args: tx_port=tcp://127.0.0.1:3900,rx_port=tcp://127.0.0.1:3909,base_srate=11.52e6
+  srate: 11.52
+  tx_gain: 75
+  rx_gain: 75
+cell_cfg:
+  dl_arfcn: 368500
+  band: 3
+  channel_bandwidth_MHz: 10
+  common_scs: 15
+  plmn: "00101"
+  tac: 7
+  pci: 5
+  sector_id: 4
+  pdcch:
+    common: { ss0_index: 0, coreset0_index: 6 }
+    dedicated: { ss2_type: common, dci_format_0_1_and_1_1: false }
+  prach:
+    prach_config_index: 1
+  pdsch: { mcs_table: qam64 }
+  pusch: { mcs_table: qam64 }
+  slicing:
+    - { sst: 1, sd: 1, sched_cfg: { min_prb_policy_ratio: 0, max_prb_policy_ratio: 100 } }
+    - { sst: 1, sd: 2, sched_cfg: { min_prb_policy_ratio: 0, max_prb_policy_ratio: 100 } }
+    - { sst: 1, sd: 3, sched_cfg: { min_prb_policy_ratio: 0, max_prb_policy_ratio: 100 } }
+e2:
+  enable_du_e2: true
+  e2sm_kpm_enabled: true
+  e2sm_rc_enabled: true
+  addr: 10.0.2.10
+  bind_addr: 10.0.2.5
+  port: 36421
+metrics:
+  enable_json: true
+  layers: { enable_sched: true, enable_rlc: true }
+  periodicity: { du_report_period: 1000 }
+remote_control:
+  bind_addr: 0.0.0.0
+  port: 8006
+  enabled: true
+log:
+  filename: /tmp/du_zmq4.log
+  all_level: debug
+  e2ap_level: debug
+
+===== ue10.conf =====
+[rf]
+freq_offset = 0
+tx_gain = 50
+rx_gain = 40
+srate = 11.52e6
+nof_antennas = 1
+device_name = zmq
+device_args = tx_port=tcp://127.0.0.1:3901,rx_port=tcp://127.0.0.1:3910,base_srate=11.52e6
+[rat.eutra]
+dl_earfcn = 2850
+nof_carriers = 0
+[rat.nr]
+bands = 3
+nof_carriers = 1
+[pcap]
+enable = none
+[log]
+all_level = debug
+filename = /tmp/vue10.log
+[usim]
+mode = soft
+algo = milenage
+opc  = 63bfa50ee6523365ff14c1f45f88737d
+k    = 0c0a34601d4f07677303652c0462535b
+imsi = 001010000000015
+imei = 353490069873010
+[rrc]
+release = 15
+ue_category = 4
+[nas]
+apn = srsapn
+apn_protocol = ipv4
+[gw]
+netns = vue10
+
+===== ue11.conf =====
+[rf]
+freq_offset = 0
+tx_gain = 50
+rx_gain = 40
+srate = 11.52e6
+nof_antennas = 1
+device_name = zmq
+device_args = tx_port=tcp://127.0.0.1:3902,rx_port=tcp://127.0.0.1:3911,base_srate=11.52e6
+[rat.eutra]
+dl_earfcn = 2850
+nof_carriers = 0
+[rat.nr]
+bands = 3
+nof_carriers = 1
+[pcap]
+enable = none
+[log]
+all_level = debug
+filename = /tmp/vue11.log
+[usim]
+mode = soft
+algo = milenage
+opc  = 63bfa50ee6523365ff14c1f45f88737d
+k    = 0c0a34601d4f07677303652c0462535b
+imsi = 001010000000016
+imei = 353490069873011
+[rrc]
+release = 15
+ue_category = 4
+[nas]
+apn = srsapn
+apn_protocol = ipv4
+[gw]
+netns = vue11
+
+===== ue12.conf =====
+[rf]
+freq_offset = 0
+tx_gain = 50
+rx_gain = 40
+srate = 11.52e6
+nof_antennas = 1
+device_name = zmq
+device_args = tx_port=tcp://127.0.0.1:3903,rx_port=tcp://127.0.0.1:3912,base_srate=11.52e6
+[rat.eutra]
+dl_earfcn = 2850
+nof_carriers = 0
+[rat.nr]
+bands = 3
+nof_carriers = 1
+[pcap]
+enable = none
+[log]
+all_level = debug
+filename = /tmp/vue12.log
+[usim]
+mode = soft
+algo = milenage
+opc  = 63bfa50ee6523365ff14c1f45f88737d
+k    = 0c0a34601d4f07677303652c0462535b
+imsi = 001010000000017
+imei = 353490069873012
+[rrc]
+release = 15
+ue_category = 4
+[nas]
+apn = srsapn
+apn_protocol = ipv4
+[gw]
+netns = vue12
+
+===== ue1.conf =====
+[rf]
+freq_offset = 0
+tx_gain = 50
+rx_gain = 40
+srate = 11.52e6
+nof_antennas = 1
+device_name = zmq
+device_args = tx_port=tcp://127.0.0.1:3001,rx_port=tcp://127.0.0.1:3010,base_srate=11.52e6
+[rat.eutra]
+dl_earfcn = 2850
+nof_carriers = 0
+[rat.nr]
+bands = 3
+nof_carriers = 1
+[pcap]
+enable = none
+[log]
+all_level = debug
+filename = /tmp/vue1.log
+[usim]
+mode = soft
+algo = milenage
+opc  = 63bfa50ee6523365ff14c1f45f88737d
+k    = 0c0a34601d4f07677303652c0462535b
+imsi = 001010000000006
+imei = 353490069873001
+[rrc]
+release = 15
+ue_category = 4
+[nas]
+apn = srsapn
+apn_protocol = ipv4
+[gw]
+netns = vue1
+
+===== ue2.conf =====
+[rf]
+freq_offset = 0
+tx_gain = 50
+rx_gain = 40
+srate = 11.52e6
+nof_antennas = 1
+device_name = zmq
+device_args = tx_port=tcp://127.0.0.1:3002,rx_port=tcp://127.0.0.1:3011,base_srate=11.52e6
+[rat.eutra]
+dl_earfcn = 2850
+nof_carriers = 0
+[rat.nr]
+bands = 3
+nof_carriers = 1
+[pcap]
+enable = none
+[log]
+all_level = debug
+filename = /tmp/vue2.log
+[usim]
+mode = soft
+algo = milenage
+opc  = 63bfa50ee6523365ff14c1f45f88737d
+k    = 0c0a34601d4f07677303652c0462535b
+imsi = 001010000000007
+imei = 353490069873002
+[rrc]
+release = 15
+ue_category = 4
+[nas]
+apn = srsapn
+apn_protocol = ipv4
+[gw]
+netns = vue2
+
+===== ue3.conf =====
+[rf]
+freq_offset = 0
+tx_gain = 50
+rx_gain = 40
+srate = 11.52e6
+nof_antennas = 1
+device_name = zmq
+device_args = tx_port=tcp://127.0.0.1:3003,rx_port=tcp://127.0.0.1:3012,base_srate=11.52e6
+[rat.eutra]
+dl_earfcn = 2850
+nof_carriers = 0
+[rat.nr]
+bands = 3
+nof_carriers = 1
+[pcap]
+enable = none
+[log]
+all_level = debug
+filename = /tmp/vue3.log
+[usim]
+mode = soft
+algo = milenage
+opc  = 63bfa50ee6523365ff14c1f45f88737d
+k    = 0c0a34601d4f07677303652c0462535b
+imsi = 001010000000008
+imei = 353490069873003
+[rrc]
+release = 15
+ue_category = 4
+[nas]
+apn = srsapn
+apn_protocol = ipv4
+[gw]
+netns = vue3
+
+===== ue4.conf =====
+[rf]
+freq_offset = 0
+tx_gain = 50
+rx_gain = 40
+srate = 11.52e6
+nof_antennas = 1
+device_name = zmq
+device_args = tx_port=tcp://127.0.0.1:3301,rx_port=tcp://127.0.0.1:3310,base_srate=11.52e6
+[rat.eutra]
+dl_earfcn = 2850
+nof_carriers = 0
+[rat.nr]
+bands = 3
+nof_carriers = 1
+[pcap]
+enable = none
+[log]
+all_level = debug
+filename = /tmp/vue4.log
+[usim]
+mode = soft
+algo = milenage
+opc  = 63bfa50ee6523365ff14c1f45f88737d
+k    = 0c0a34601d4f07677303652c0462535b
+imsi = 001010000000009
+imei = 353490069873004
+[rrc]
+release = 15
+ue_category = 4
+[nas]
+apn = srsapn
+apn_protocol = ipv4
+[gw]
+netns = vue4
+
+===== ue5.conf =====
+[rf]
+freq_offset = 0
+tx_gain = 50
+rx_gain = 40
+srate = 11.52e6
+nof_antennas = 1
+device_name = zmq
+device_args = tx_port=tcp://127.0.0.1:3302,rx_port=tcp://127.0.0.1:3311,base_srate=11.52e6
+[rat.eutra]
+dl_earfcn = 2850
+nof_carriers = 0
+[rat.nr]
+bands = 3
+nof_carriers = 1
+[pcap]
+enable = none
+[log]
+all_level = debug
+filename = /tmp/vue5.log
+[usim]
+mode = soft
+algo = milenage
+opc  = 63bfa50ee6523365ff14c1f45f88737d
+k    = 0c0a34601d4f07677303652c0462535b
+imsi = 001010000000010
+imei = 353490069873005
+[rrc]
+release = 15
+ue_category = 4
+[nas]
+apn = srsapn
+apn_protocol = ipv4
+[gw]
+netns = vue5
+
+===== ue6.conf =====
+[rf]
+freq_offset = 0
+tx_gain = 50
+rx_gain = 40
+srate = 11.52e6
+nof_antennas = 1
+device_name = zmq
+device_args = tx_port=tcp://127.0.0.1:3303,rx_port=tcp://127.0.0.1:3312,base_srate=11.52e6
+[rat.eutra]
+dl_earfcn = 2850
+nof_carriers = 0
+[rat.nr]
+bands = 3
+nof_carriers = 1
+[pcap]
+enable = none
+[log]
+all_level = debug
+filename = /tmp/vue6.log
+[usim]
+mode = soft
+algo = milenage
+opc  = 63bfa50ee6523365ff14c1f45f88737d
+k    = 0c0a34601d4f07677303652c0462535b
+imsi = 001010000000011
+imei = 353490069873006
+[rrc]
+release = 15
+ue_category = 4
+[nas]
+apn = srsapn
+apn_protocol = ipv4
+[gw]
+netns = vue6
+
+===== ue7.conf =====
+[rf]
+freq_offset = 0
+tx_gain = 50
+rx_gain = 40
+srate = 11.52e6
+nof_antennas = 1
+device_name = zmq
+device_args = tx_port=tcp://127.0.0.1:3601,rx_port=tcp://127.0.0.1:3610,base_srate=11.52e6
+[rat.eutra]
+dl_earfcn = 2850
+nof_carriers = 0
+[rat.nr]
+bands = 3
+nof_carriers = 1
+[pcap]
+enable = none
+[log]
+all_level = debug
+filename = /tmp/vue7.log
+[usim]
+mode = soft
+algo = milenage
+opc  = 63bfa50ee6523365ff14c1f45f88737d
+k    = 0c0a34601d4f07677303652c0462535b
+imsi = 001010000000012
+imei = 353490069873007
+[rrc]
+release = 15
+ue_category = 4
+[nas]
+apn = srsapn
+apn_protocol = ipv4
+[gw]
+netns = vue7
+
+===== ue8.conf =====
+[rf]
+freq_offset = 0
+tx_gain = 50
+rx_gain = 40
+srate = 11.52e6
+nof_antennas = 1
+device_name = zmq
+device_args = tx_port=tcp://127.0.0.1:3602,rx_port=tcp://127.0.0.1:3611,base_srate=11.52e6
+[rat.eutra]
+dl_earfcn = 2850
+nof_carriers = 0
+[rat.nr]
+bands = 3
+nof_carriers = 1
+[pcap]
+enable = none
+[log]
+all_level = debug
+filename = /tmp/vue8.log
+[usim]
+mode = soft
+algo = milenage
+opc  = 63bfa50ee6523365ff14c1f45f88737d
+k    = 0c0a34601d4f07677303652c0462535b
+imsi = 001010000000013
+imei = 353490069873008
+[rrc]
+release = 15
+ue_category = 4
+[nas]
+apn = srsapn
+apn_protocol = ipv4
+[gw]
+netns = vue8
+
+===== ue9.conf =====
+[rf]
+freq_offset = 0
+tx_gain = 50
+rx_gain = 40
+srate = 11.52e6
+nof_antennas = 1
+device_name = zmq
+device_args = tx_port=tcp://127.0.0.1:3603,rx_port=tcp://127.0.0.1:3612,base_srate=11.52e6
+[rat.eutra]
+dl_earfcn = 2850
+nof_carriers = 0
+[rat.nr]
+bands = 3
+nof_carriers = 1
+[pcap]
+enable = none
+[log]
+all_level = debug
+filename = /tmp/vue9.log
+[usim]
+mode = soft
+algo = milenage
+opc  = 63bfa50ee6523365ff14c1f45f88737d
+k    = 0c0a34601d4f07677303652c0462535b
+imsi = 001010000000014
+imei = 353490069873009
+[rrc]
+release = 15
+ue_category = 4
+[nas]
+apn = srsapn
+apn_protocol = ipv4
+[gw]
+netns = vue9
+
+===== ue_slice_map.txt =====
+vue1 critical 001010000000006
+vue2 performance 001010000000007
+vue3 business 001010000000008
+vue4 critical 001010000000009
+vue5 performance 001010000000010
+vue6 business 001010000000011
+vue7 critical 001010000000012
+vue8 performance 001010000000013
+vue9 business 001010000000014
+vue10 critical 001010000000015
+vue11 performance 001010000000016
+vue12 critical 001010000000017
+
+===== zmq_broker_du1.py =====
+#!/usr/bin/env python3
+from gnuradio import gr, blocks, zeromq
+class Broker(gr.top_block):
+    def __init__(self):
+        gr.top_block.__init__(self, "3-UE ZMQ Broker DU1")
+        self.gnb_dl = zeromq.req_source(gr.sizeof_gr_complex, 1, "tcp://127.0.0.1:3000", 100, False, -1)
+        for p in [3010, 3011, 3012]:
+            self.connect(self.gnb_dl, zeromq.rep_sink(gr.sizeof_gr_complex, 1, f"tcp://127.0.0.1:{p}", 100, False, -1))
+        self.adder = blocks.add_cc(1)
+        self.gnb_ul = zeromq.rep_sink(gr.sizeof_gr_complex, 1, "tcp://127.0.0.1:3009", 100, False, -1)
+        for i, p in enumerate([3001, 3002, 3003]):
+            self.connect(zeromq.req_source(gr.sizeof_gr_complex, 1, f"tcp://127.0.0.1:{p}", 100, False, -1), (self.adder, i))
+        self.connect(self.adder, self.gnb_ul)
+if __name__ == "__main__":
+    tb = Broker(); print("[BROKER DU1] start")
+    try: tb.start(); tb.wait()
+    except KeyboardInterrupt: tb.stop(); tb.wait()
+
+===== zmq_broker_du2.py =====
+#!/usr/bin/env python3
+from gnuradio import gr, blocks, zeromq
+class Broker(gr.top_block):
+    def __init__(self):
+        gr.top_block.__init__(self, "3-UE ZMQ Broker DU2")
+        self.gnb_dl = zeromq.req_source(gr.sizeof_gr_complex, 1, "tcp://127.0.0.1:3300", 100, False, -1)
+        for p in [3310, 3311, 3312]:
+            self.connect(self.gnb_dl, zeromq.rep_sink(gr.sizeof_gr_complex, 1, f"tcp://127.0.0.1:{p}", 100, False, -1))
+        self.adder = blocks.add_cc(1)
+        self.gnb_ul = zeromq.rep_sink(gr.sizeof_gr_complex, 1, "tcp://127.0.0.1:3309", 100, False, -1)
+        for i, p in enumerate([3301, 3302, 3303]):
+            self.connect(zeromq.req_source(gr.sizeof_gr_complex, 1, f"tcp://127.0.0.1:{p}", 100, False, -1), (self.adder, i))
+        self.connect(self.adder, self.gnb_ul)
+if __name__ == "__main__":
+    tb = Broker(); print("[BROKER DU2] start")
+    try: tb.start(); tb.wait()
+    except KeyboardInterrupt: tb.stop(); tb.wait()
+
+===== zmq_broker_du3.py =====
+#!/usr/bin/env python3
+from gnuradio import gr, blocks, zeromq
+class Broker(gr.top_block):
+    def __init__(self):
+        gr.top_block.__init__(self, "3-UE ZMQ Broker DU3")
+        self.gnb_dl = zeromq.req_source(gr.sizeof_gr_complex, 1, "tcp://127.0.0.1:3600", 100, False, -1)
+        for p in [3610, 3611, 3612]:
+            self.connect(self.gnb_dl, zeromq.rep_sink(gr.sizeof_gr_complex, 1, f"tcp://127.0.0.1:{p}", 100, False, -1))
+        self.adder = blocks.add_cc(1)
+        self.gnb_ul = zeromq.rep_sink(gr.sizeof_gr_complex, 1, "tcp://127.0.0.1:3609", 100, False, -1)
+        for i, p in enumerate([3601, 3602, 3603]):
+            self.connect(zeromq.req_source(gr.sizeof_gr_complex, 1, f"tcp://127.0.0.1:{p}", 100, False, -1), (self.adder, i))
+        self.connect(self.adder, self.gnb_ul)
+if __name__ == "__main__":
+    tb = Broker(); print("[BROKER DU3] start")
+    try: tb.start(); tb.wait()
+    except KeyboardInterrupt: tb.stop(); tb.wait()
+
+===== zmq_broker_du4.py =====
+#!/usr/bin/env python3
+from gnuradio import gr, blocks, zeromq
+class Broker(gr.top_block):
+    def __init__(self):
+        gr.top_block.__init__(self, "3-UE ZMQ Broker DU4")
+        self.gnb_dl = zeromq.req_source(gr.sizeof_gr_complex, 1, "tcp://127.0.0.1:3900", 100, False, -1)
+        for p in [3910, 3911, 3912]:
+            self.connect(self.gnb_dl, zeromq.rep_sink(gr.sizeof_gr_complex, 1, f"tcp://127.0.0.1:{p}", 100, False, -1))
+        self.adder = blocks.add_cc(1)
+        self.gnb_ul = zeromq.rep_sink(gr.sizeof_gr_complex, 1, "tcp://127.0.0.1:3909", 100, False, -1)
+        for i, p in enumerate([3901, 3902, 3903]):
+            self.connect(zeromq.req_source(gr.sizeof_gr_complex, 1, f"tcp://127.0.0.1:{p}", 100, False, -1), (self.adder, i))
+        self.connect(self.adder, self.gnb_ul)
+if __name__ == "__main__":
+    tb = Broker(); print("[BROKER DU4] start")
+    try: tb.start(); tb.wait()
+    except KeyboardInterrupt: tb.stop(); tb.wait()
+

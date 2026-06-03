@@ -1,0 +1,24 @@
+# Tower-1 state mer. 03 juin 2026 16:18:01 CEST
+## srsRAN Project commit: 4bf1543936
+## srsRAN 4G (srsUE): release_25_10 / 6bcbd9e5b
+## GNU Radio 3.10.1.1
+## E2 nodes
+{e2Manager},RAN:gnbd_001_001_00000213_1
+{e2Manager},RAN:gnbd_001_001_00000213_4
+{e2Manager},RAN:gnbd_001_001_00000213_2
+{e2Manager},RAN:gnbd_001_001_00000213_3
+## netns
+vue12
+vue11
+vue10
+vue9
+vue8
+vue7
+vue6
+vue5
+vue4
+vue3
+vue2
+vue1
+## RIC bridge
+br-f0d01b0babc5  UP             10.0.2.1/24 10.0.2.2/24 10.0.2.3/24 10.0.2.4/24 10.0.2.5/24 fe80::8436:40ff:fee8:dd79/64 
