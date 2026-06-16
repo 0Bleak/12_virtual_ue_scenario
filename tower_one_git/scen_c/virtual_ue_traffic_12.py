@@ -11,8 +11,7 @@ SCRIPT={"critical":"/home/ligm/critical_traffic.py",
 def run(ns,kind):
     cmd=["sudo","ip","netns","exec",ns,"python3",SCRIPT[kind],
          "--server",SERVER,"--duration","999999","--ue",ns,
-         "--latency_log",f"/tmp/latency_{ns}.csv",
-         "--offered_log",f"/tmp/offered_{ns}.csv"]
+         "--latency_log",f"/tmp/latency_{ns}.csv"]
     while True:
         try: subprocess.run(cmd)
         except Exception as e: print(f"[{ns}] {e}, restart 3s"); time.sleep(3)

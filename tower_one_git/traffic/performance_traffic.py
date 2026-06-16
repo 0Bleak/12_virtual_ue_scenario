@@ -65,26 +65,12 @@ def latlog(apps,out,iv=1):
         w=csv.writer(open(out,"a",newline=""))
         for a in apps:
             if a.lat: w.writerow([ts,a.name,round(a.avg(),2),len(a.lat)])
-def offlog(apps,ue,out,iv=1):
-    import csv
-    csv.writer(open(out,"w",newline="")).writerow(
-        ["timestamp","ue","off_ul_bps","off_dl_bps","ach_ul_bps","ach_dl_bps"])
-    pu=pd=0
-    while any(a.running for a in apps):
-        time.sleep(iv); ts=round(time.time(),3)
-        ou=sum(a.cur_ul for a in apps); od=sum(a.cur_dl for a in apps)
-        tu=sum(a.ul for a in apps); td=sum(a.dl for a in apps)
-        au=(tu-pu)*8/iv; ad=(td-pd)*8/iv; pu,pd=tu,td
-        csv.writer(open(out,"a",newline="")).writerow(
-            [ts,ue,round(ou),round(od),round(au),round(ad)])
-
 def main():
     p=argparse.ArgumentParser()
     p.add_argument("--server",default="10.45.0.1")
     p.add_argument("--duration",type=int,default=3600)
     p.add_argument("--ue",default="performance")
     p.add_argument("--latency_log",default="/tmp/latency_performance.csv")
-    p.add_argument("--offered_log",default="/tmp/offered_performance.csv")
     a=p.parse_args()
     defs=[("telemetry_nc",telemetry_nc,7001),("equip_ctl",equip_ctl,7002),
           ("asset_tel",asset_tel,7003),("pis",pis,7004),("video_surv",video_surv,7005)]
@@ -93,7 +79,6 @@ def main():
         app=App(name,port,a.server); apps.append(app)
         threading.Thread(target=fn,args=(app,),daemon=True).start()
     threading.Thread(target=latlog,args=(apps,a.latency_log),daemon=True).start()
-    threading.Thread(target=offlog,args=(apps,a.ue,a.offered_log),daemon=True).start()
     print(f"[PERFORMANCE/{a.ue}] -> {a.server} ({a.duration}s)")
     try: time.sleep(a.duration)
     except KeyboardInterrupt: pass
